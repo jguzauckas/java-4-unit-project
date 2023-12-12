@@ -1,0 +1,2 @@
+Part A: You end up on floor 40.
+Part B: You first enter the basement on instruction number 3.
