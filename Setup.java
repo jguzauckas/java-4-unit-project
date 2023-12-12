@@ -18,11 +18,11 @@ public class Setup {
 
     public static void main(String[] args) {
         int size = 7000;
-        String final_str = "";
-        int floorCount = 0;
+        String final_str = "(((((";
+        int floorCount = 5;
         int basementStep = -1;
         boolean basementYet = false;
-        for (int i = 0; i < size; i++) {
+        for (int i = 5; i < size; i++) {
             if (Math.random() >= 0.5) {
                 final_str += "(";
                 floorCount++;
@@ -32,6 +32,17 @@ public class Setup {
             }
             if (!basementYet && floorCount == -1) {
                 basementStep = i + 1;
+                basementYet = true;
+            }
+        }
+        if (!basementYet) {
+            basementStep = 7000;
+        }
+        while (!basementYet) {
+            final_str += ")";
+            floorCount--;
+            basementStep++;
+            if (floorCount == -1) {
                 basementYet = true;
             }
         }
